@@ -77,7 +77,7 @@ public with sharing class VariablesDataTypesOperators {
         if (b == 0) {
             return 0;
             }
-        Integer result = a / b;
+        Decimal result = (Decimal)a / b;
         return result; // Replace null with the variable you used to store the result
     }
     /**
@@ -91,7 +91,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the number is even, False otherwise.
      */
     public static Boolean isEven(Integer num) {
-        if(math.mod(num, 2) == 0){
+        if(Math.mod(num, 2) == 0){
         return true; // Replace null with the variable you used to store the result
     }
     else {
@@ -106,12 +106,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return true if the number is positive, false otherwise.
      */
     public static Boolean isPositive(Integer num) {
-        if(num > 0){
-        return true; // Replace null with the variable you used to store the result
-    }
-    else {
-        return false;
-    }
+        return num > 0;
     }
 
     /**
@@ -138,7 +133,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return The complete sentence as a single String.
      */
     public static String createSentence(String noun, String verb, String endingPunctuation) {
-        return ('The' + ' ' + noun + ' ' + verb + ' ' + endingPunctuation); // Replace null with the variable you used to store the result
+        return ('The' + ' ' + noun + ' ' + 'is' + ' ' + verb + ' ' + endingPunctuation); // Replace null with the variable you used to store the result
     }
 
     /**
@@ -168,7 +163,7 @@ public with sharing class VariablesDataTypesOperators {
      * @return True if the date is today or in the future, False otherwise.
      */
     public static Boolean isDateTodayOrFuture(Date dt) {
-     if (dt <= Date.today()){
+     if (dt >= Date.today()){
         return true;
         }
         else{
@@ -189,7 +184,7 @@ public with sharing class VariablesDataTypesOperators {
         Integer MILLISECONDS_PER_MINUTE = 60000; // Make this value a constant
         Integer milliseconds;
         return minutes * MILLISECONDS_PER_MINUTE; // Replace null with the variable you used to store the result
-    }    
+    } 
 
     /**
      * Question 12
@@ -203,7 +198,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Double averageOfThreeNumbers(Integer a, Integer b, Integer c) {
         Integer sum = a + b + c;
-        Double averageOfThreeNumbers = sum /3.0;
+        Double averageOfThreeNumbers = sum /3;
         
         return averageOfThreeNumbers; // Replace null with the variable you used to store the result
     }
@@ -235,7 +230,7 @@ public with sharing class VariablesDataTypesOperators {
         // Add parentheses in the below expression to change the result.
         // The result of the expression as it is right now is 43. 
         // You should add parentheses so that the result of the expression becomes 8.
-        Integer answer = (48 - (15 + 5)) * 2;
+        Integer answer = 48 - (15 + 5) * 2;
         return answer; // Replace null with the variable you used to store the result
     }
 
@@ -308,9 +303,7 @@ public with sharing class VariablesDataTypesOperators {
      */
     public static Decimal calculateWeeklyPaycheck(Decimal hourlyRate, Double numberOfHours) {
         // Calculate the weekly paycheck using the formula: rate multiplied by hours
-        Decimal weeklyPay = (hourlyRate * numberOfHours);
-        Decimal monthlyPay = (weeklyPay * 4);
-        return weeklyPay; // Replace null with the variable you used to store the result
+        return hourlyRate * numberOfHours;
     }
 
     /**
